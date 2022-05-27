@@ -16,7 +16,7 @@ getJSON("https://premierleagueapi.herokuapp.com/news")
     data.forEach((datum) => {
       // create a new div for each news item
       const card = createCard(datum.title, datum.url, datum.source);
-      document.body.appendChild(card);
+      document.querySelector(".container").appendChild(card);
     });
   })
   .catch((error) => {
@@ -25,9 +25,13 @@ getJSON("https://premierleagueapi.herokuapp.com/news")
 
 const createCard = (title, url, source) => {
   const card = document.createElement("div");
+  card.classList.add("card");
   const cardlink = document.createElement("a");
+  cardlink.classList.add("cardlink");
   const cardtitle = document.createElement("h2");
+  cardtitle.classList.add("cardtitle");
   const cardsource = document.createElement("h3");
+  cardsource.classList.add("cardsource");
 
   card.appendChild(cardlink);
   cardlink.appendChild(cardtitle);

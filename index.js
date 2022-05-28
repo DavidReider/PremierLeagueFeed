@@ -35,11 +35,11 @@ const createCard = (title, url, source) => {
 
   card.appendChild(cardlink);
   cardlink.appendChild(cardtitle);
-  cardlink.appendChild(cardsource);
+  card.appendChild(cardsource);
 
   cardtitle.innerText = title;
   cardlink.href = url;
-  cardsource.innerText = source;
+  cardsource.innerText = "Source: " + source;
 
   return card;
 };
